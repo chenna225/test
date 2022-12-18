@@ -1,0 +1,123 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Employee Management System</a>
+      <div id="navbarSupportedContent">
+        <button class="btn btn-outline-success" type="submit">Add Employee</button>
+      </div>
+    </div>
+</nav>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Employee ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Email Address</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of empList">
+      <td>{{employee.id}}</td>
+      <td>{{employee.fname}}</td>
+      <td>{{employee.lname}}</td>
+      <td>{{employee.phonenumber}}</td>
+      <td>{{employee.emailid}}</td>
+      <td>
+          <button type="button" class="btn btn-outline-primary" (click)="editEmployee(employee)">Edit</button>
+          <button type="button" class="btn btn-outline-danger" (click)="deleteEmployee(employee)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- Add employee modal -->
+<div>
+<div>
+<div>
+  <div>
+    <h5>Add new Employee</h5>
+    <button type="button" class="btn-close"></button>
+  </div>
+  <div>
+    
+      <form>
+          <div class="mb-3">
+              <label class="form-label">First Name </label>
+              <input type="text" formControlName="fname" class="form-control" id="fname" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label class="form-label"> Last Name </label>
+              <input type="text" formControlName="lname" class="form-control" id="lname">
+            </div>
+          <div class="mb-3">
+            <label class="form-label">Email Address </label>
+            <input type="email" formControlName="emailid" class="form-control" id="emailid">
+          </div>
+          <div class="mb-3">
+              <label class="form-label">Phone Number </label>
+              <input type="text" formControlName="phonenumber" class="form-control" id="phonenumber">
+            </div>
+          <div>
+              <button type="button" class="btn btn-secondary">Close</button>
+              <button type="button" class="btn btn-primary" (click)="addEmployee()">Add employee</button>
+            </div>
+        </form>
+
+  </div>
+  
+</div>
+</div>
+</div>
+
+
+<!-- Edit employee modal -->
+<div id="editEmployee">
+<div>
+<div>
+  <div>
+    <h5>Edit employee details</h5>
+    <button type="button" class="btn-close"></button>
+  </div>
+  <div>
+
+      <form>
+          <div class="mb-3">
+              <label class="form-label">First Name </label>
+              <input type="text" formControlName="fname" class="form-control" id="fname">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Last Name </label>
+              <input type="text" formControlName="lname" class="form-control" id="lname">
+            </div>
+          <div class="mb-3">
+            <label class="form-label">Email Address </label>
+            <input type="email" formControlName="emailid" class="form-control" id="emailid">
+          </div>
+          <div class="mb-3">
+              <label class="form-label">Phone Number </label>
+              <input type="text" formControlName="phonenumber" class="form-control" id="phonenumber">
+            </div>
+          <div>
+              <button type="button" class="btn btn-secondary">Close</button>
+              <button type="button" class="btn btn-outline-success" (click)="updateEmployee()">Update </button>
+            </div>
+        </form>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
